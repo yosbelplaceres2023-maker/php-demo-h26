@@ -26,7 +26,6 @@ function active_link(string $page, string $currentPage): string
         <nav class="site-nav">
             <a href="client_index.php"<?= active_link('client_index.php', $currentPage) ?>>Clients</a>
             <a href="city_index.php"<?= active_link('city_index.php', $currentPage) ?>>Villes</a>
-            <a href="public/index.php">Messages</a>
         </nav>
     </header>
 

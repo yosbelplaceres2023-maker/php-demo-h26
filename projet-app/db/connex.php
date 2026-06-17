@@ -1,8 +1,15 @@
 <?php
 
-$envPath = __DIR__ . '/../.env';
+$envPaths = [
+    __DIR__ . '/../.env',
+    __DIR__ . '/../../.env',
+];
 
-if (is_file($envPath)) {
+foreach ($envPaths as $envPath) {
+    if (!is_file($envPath)) {
+        continue;
+    }
+
     $envValues = parse_ini_file($envPath, false, INI_SCANNER_RAW);
 
     if (is_array($envValues)) {
@@ -12,6 +19,8 @@ if (is_file($envPath)) {
             }
         }
     }
+
+    break;
 }
 
 function env_value(string $key, string $default = ''): string
