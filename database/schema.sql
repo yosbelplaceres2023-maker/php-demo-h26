@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS cours_fullstack
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_unicode_ci;
+
+USE cours_fullstack;
+
+CREATE TABLE IF NOT EXISTS messages (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    contenu TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
